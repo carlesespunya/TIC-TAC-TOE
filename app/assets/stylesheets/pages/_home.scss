@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+.board{
+  align-items: center;
+  width: 750px;
+  height: 750px;
+  background-color: white;
+  margin: auto;
+  border: 3px solid black;
+  margin-bottom: 100px;
+  padding-bottom: 0px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.box{
+  line-height: 200px;
+  border: 1px solid black;
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  margin: auto;
+  padding: 65px;
+  h1{
+    font-size: 100px;
+  }
+}

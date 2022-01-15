@@ -1,0 +1,63 @@
+<h1>You are in <%= @game.title %> game</h1>
+
+<% if @user == @player1 %>
+  <% if @game.turn.even? %>
+    <% if @game.finished %>
+      <h1>¡You Won!</h1>
+    <% else %>
+      <h1>Its your turn click on a box</h1>
+      <div class="board">
+        <% @board.each_with_index do |box, index| %>
+          <% if box == "" %>
+            <%= link_to change_turn_game_path(@game, index: index ), method: :patch, class: "" do %>
+              <div class="box"><h1><%= box %></h1></div>
+            <% end %>
+          <% else %>
+            <div class="box"><h1><%= box %></h1></div>
+          <% end  %>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <% if @game.finished %>
+      <h1>¡You Lost!</h1>
+    <% else %>
+      <h1>wait for the other player to play</h1>
+      <div class="board">
+        <% @board.each do |box| %>
+          <div class="box"><h1><%= box %></h1></div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <% if @game.turn.odd? %>
+    <% if @game.finished %>
+      <h1>¡You Won!</h1>
+    <% else %>
+      <h1>Its your turn click on a box</h1>
+      <div class="board">
+        <% @board.each_with_index do |box, index| %>
+          <% if box == "" %>
+            <%= link_to change_turn_game_path(@game, index: index ), method: :patch, class: "" do %>
+              <div class="box"><h1><%= box %></h1></div>
+            <% end %>
+          <% else %>
+            <div class="box"><h1><%= box %></h1></div>
+          <% end  %>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <% if @game.finished %>
+      <h1>¡You Lost!</h1>
+    <% else %>
+      <h1>wait for the other player to play</h1>
+      <div class="board">
+        <% @board.each_with_index do |box, index| %>
+          <div class="box"><h1><%= box %></h1></div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

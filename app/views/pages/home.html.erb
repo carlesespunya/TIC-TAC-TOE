@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<% if user_signed_in? %>
+  <h1>You are signed in as <%= @current_user.email %></h1>
+    <%= link_to games_path  do %>
+      <h1> Join game </h1>
+    <% end %>
+    <%= link_to new_game_path do %>
+      <h1> Create game </h1>
+    <% end %>
+<% else %>
+  <p>Log in to start playing</p>
+    <div class="btn">
+        <button type="button"><%= link_to "Login", new_user_session_path %></button>
+    </div>
+<% end %>
