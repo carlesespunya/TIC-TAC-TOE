@@ -1,15 +1,29 @@
 
 <% if user_signed_in? %>
-  <h1>You are signed in as <%= @current_user.email %></h1>
-    <%= link_to games_path  do %>
-      <h1> Join game </h1>
-    <% end %>
-    <%= link_to new_game_path do %>
-      <h1> Create game </h1>
-    <% end %>
-<% else %>
-  <p>Log in to start playing</p>
-    <div class="btn">
-        <button type="button"><%= link_to "Login", new_user_session_path %></button>
+  <div class="hello">
+    <h1>Hi, <strong><%= @current_user.email %></strong></h1>
+    <h2>Wins:  <%= @current_user.wins %></h2>
+    <h2>Losses: <%= @current_user.losses %></h2>
+    <h2>Draws: <%= @current_user.draws %></h2>
+  </div>
+    <div class="new-game">
+      <div class="join">
+        <%= link_to games_path  do %>
+          <h1> Join game </h1>
+        <% end %>
+      </div>
+      <div class="create">
+        <%= link_to new_game_path do %>
+          <h1> Create game </h1>
+        <% end %>
+      </div>
     </div>
+<% else %>
+  <div class="hello">
+    <h1>¡Hi, there!</h1>
+    <h2>Log in or create an acount if you want to start playing.</h2>
+    <div class="btn">
+        <%= link_to "Login", new_user_session_path %>
+    </div>
+  </div>
 <% end %>

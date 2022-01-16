@@ -1,11 +1,42 @@
-<h1>You are in <%= @game.title %> game</h1>
+<script>
+    window.setInterval('refresh()', 5000);
 
+    function refresh() {
+        window .location.reload();
+    }
+</script>
+<div class="game-title">
+  <h1>Game: <%= @game.title %></h1>
+  <h1>Player1: <%= @player1.email %></h1>
+  <% if !@game.bookings[1].nil?%>
+    <h1>Player2: <%= @game.bookings[1].user.email %></h1>
+  <% end  %>
+</div>
 <% if @user == @player1 %>
   <% if @game.turn.even? %>
     <% if @game.finished %>
-      <h1>¡You Won!</h1>
+      <% if @game.turn == 9 %>
+        <div class="YW">
+          <h1>¡Draw!</h1>
+        </div>
+      <% else %>
+        <div class="YW">
+          <h1>¡You Won!</h1>
+        </div>
+      <% end %>
+      <div class="new-game">
+        <div class="join">
+          <%= link_to games_path  do %>
+            <h1> Join game </h1>
+          <% end %>
+        </div>
+        <div class="create">
+          <%= link_to new_game_path do %>
+            <h1> Create game </h1>
+          <% end %>
+        </div>
+      </div>
     <% else %>
-      <h1>Its your turn click on a box</h1>
       <div class="board">
         <% @board.each_with_index do |box, index| %>
           <% if box == "" %>
@@ -17,25 +48,69 @@
           <% end  %>
         <% end %>
       </div>
+      <div class="YT">
+        <h1>Your Turn</h1>
+      </div>
     <% end %>
   <% else %>
     <% if @game.finished %>
-      <h1>¡You Lost!</h1>
+      <% if @game.turn == 9 %>
+        <div class="YW">
+          <h1>¡Draw!</h1>
+        </div>
+      <% else %>
+        <div class="YL">
+          <h1>¡You Lost!</h1>
+        </div>
+      <% end %>
+      <div class="new-game">
+        <div class="join">
+          <%= link_to games_path  do %>
+            <h1> Join game </h1>
+          <% end %>
+        </div>
+        <div class="create">
+          <%= link_to new_game_path do %>
+            <h1> Create game </h1>
+          <% end %>
+        </div>
+      </div>
     <% else %>
-      <h1>wait for the other player to play</h1>
       <div class="board">
         <% @board.each do |box| %>
           <div class="box"><h1><%= box %></h1></div>
         <% end %>
+      </div>
+      <div class="OT">
+        <h1>Oponents Turn</h1>
       </div>
     <% end %>
   <% end %>
 <% else %>
   <% if @game.turn.odd? %>
     <% if @game.finished %>
-      <h1>¡You Won!</h1>
+      <% if @game.turn == 9 %>
+        <div class="YW">
+          <h1>¡Draw!</h1>
+        </div>
+      <% else %>
+        <div class="YW">
+          <h1>¡You Won!</h1>
+        </div>
+      <% end %>
+      <div class="new-game">
+        <div class="join">
+          <%= link_to games_path  do %>
+            <h1> Join game </h1>
+          <% end %>
+        </div>
+        <div class="create">
+          <%= link_to new_game_path do %>
+            <h1> Create game </h1>
+          <% end %>
+        </div>
+      </div>
     <% else %>
-      <h1>Its your turn click on a box</h1>
       <div class="board">
         <% @board.each_with_index do |box, index| %>
           <% if box == "" %>
@@ -47,16 +122,41 @@
           <% end  %>
         <% end %>
       </div>
+      <div class="YT">
+        <h1>Your Turn</h1>
+      </div>
     <% end %>
   <% else %>
     <% if @game.finished %>
-      <h1>¡You Lost!</h1>
+      <% if @game.turn == 9 %>
+        <div class="YW">
+          <h1>¡Draw!</h1>
+        </div>
+      <% else %>
+        <div class="YL">
+          <h1>¡You Lost!</h1>
+        </div>
+      <% end %>
+      <div class="new-game">
+        <div class="join">
+          <%= link_to games_path  do %>
+            <h1> Join game </h1>
+          <% end %>
+        </div>
+        <div class="create">
+          <%= link_to new_game_path do %>
+            <h1> Create game </h1>
+          <% end %>
+        </div>
+      </div>
     <% else %>
-      <h1>wait for the other player to play</h1>
       <div class="board">
         <% @board.each_with_index do |box, index| %>
           <div class="box"><h1><%= box %></h1></div>
         <% end %>
+      </div>
+      <div class="OT">
+        <h1>Oponents Turn</h1>
       </div>
     <% end %>
   <% end %>

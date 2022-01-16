@@ -1,16 +1,7 @@
-<h1>Available games</h1>
-<%= simple_form_for ([@booking]), html: { class: 'flex flex-col gap-0 items-center w-2/5' }  do |f| %>
-  <%= f.input :game_id, label: false, collection: @games, label_method: lambda{ |game| "#{game.title} - Players: #{game.bookings.length}" }, :value_method => :id, input_html: { style: 'width:200px;' }, prompt: "Select Game"  %>
-  <%= f.button :submit, "Join", class: "mt-0 w-4/12 text-center"%>
-<% end %>
-
-<!--
-<% @games.each do |game| %>
-  <div class= "border">
-  <%= link_to game_path(game) do%>
-    <h1><%= game.title %></h1>
-  <% end  %>
-  <h2> Players: <%= game.bookings.length %></h2>
-  </div>
-<% end %>
--->
+<div class="join-game">
+  <h1>Available games</h1>
+  <%= simple_form_for ([@booking]), html: { class: 'flex flex-col gap-0 items-center w-2/5' }  do |f| %>
+    <%= f.input :game_id, label: false, collection: @games, default: @games[0], label_method: lambda{ |game| "#{game.title} - Players: #{game.bookings.length}" }, :value_method => :id, input_html: { style: 'width:100%; text-align:center;' }, prompt: "Select Game"  %>
+    <%= f.button :submit, "Join", class: "btn"%>
+  <% end %>
+</div>

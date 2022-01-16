@@ -1,26 +1,141 @@
 // Specific CSS for your home-page
 .board{
   align-items: center;
-  width: 750px;
-  height: 750px;
+  width: 606px;
+  height: 606px;
   background-color: white;
   margin: auto;
-  border: 3px solid black;
-  margin-bottom: 100px;
+  border: 4px solid black;
   padding-bottom: 0px;
   display: grid;
   grid-template-columns: auto auto auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
 }
 
 .box{
   line-height: 200px;
   border: 1px solid black;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   text-align: center;
   margin: auto;
-  padding: 65px;
+  padding: 45px;
   h1{
     font-size: 100px;
+  }
+}
+
+.hello{
+  text-align: center;
+  align-items: center;
+  width: 603px;
+  height: 300px;
+  padding: 60px;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  margin-top: 60px;
+  h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+  h2{
+    font-size: 20px;
+  }
+}
+
+.join-game{
+  text-align: center;
+  align-items: center;
+  width: 603px;
+  height: 300px;
+  padding: 60px;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  margin-top: 60px;
+  h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+  h2{
+    font-size: 20px;
+  }
+}
+
+.btn{
+    height: fit-content;
+    background: #629066;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 10px 40px;
+    margin-top: 20px;
+    a{
+      color:white;
+    }
+  }
+
+.create-game{
+  text-align: center;
+  align-items: center;
+  width: 603px;
+  height: 350px;
+  padding: 60px;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  margin-top: 60px;
+  h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+  h2{
+    font-size: 20px;
+  }
+}
+
+.login{
+  text-align: center;
+  align-items: center;
+  width: 603px;
+  height: 500px;
+  padding: 60px;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  margin-top: 60px;
+  h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+  h2{
+    font-size: 20px;
+  }
+}
+
+.sign{
+  text-align: center;
+  align-items: center;
+  width: 603px;
+  height: 550px;
+  padding: 60px;
+  margin: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  margin-top: 60px;
+  h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+  h2{
+    font-size: 20px;
   }
 }
